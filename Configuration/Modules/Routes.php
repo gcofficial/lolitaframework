@@ -154,6 +154,9 @@ class Routes implements IModule
             echo $this->render($this->data[ $page ]);
             exit;
         }
+        if (false === $tmpl) {
+            return;
+        }
         if (array_key_exists($tmpl, $this->data)) {
             status_header(200);
             echo $this->render($this->data[ $tmpl ]);
